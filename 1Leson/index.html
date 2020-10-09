@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,25 +8,39 @@
   <link rel="stylesheet" href="./bootstrap.min.css">
   <script src="./vue.js"></script>
 </head>
+
 <body>
   <div class="wrapper">
     <div class="sample">
-      <input type="text" v-bind:value="name" v-on:input="name = $event.target.value" placeholder="Name">
-      <input type="text" v-model="twoName" placeholder="twoName">
+      <button class="btn btn-primary" v-on:click="showH2 = !showH2" v-bind:title="showH2 ? 'hide' : 'Show'">
+        Togle Header
+      </button>
+      <button class="btn btn-fun" 
+      v-on:click="numbers.push(Math.floor(Math.random()* 10))" >
+
+        add list
+      </button>
       <hr>
-      <h2>Привет, {{ name }}{{twoName}} </h2>
+      <h2 v-show="showH2">Hello, World</h2>
+      <hr>
+      <ul class="list-group">
+        <li class="list-group-item" v-for="number in numbers">
+          {{number}}
+        </li>
+      </ul>
     </div>
   </div>
   <script>
     let sample = new Vue({
-      el:'.sample',
+      el: '.sample',
       data: {
-        name: '',
-        twoName: '',
+        showH2: true,
+        numbers: [1, 1, ]
       }
     });
 
 
   </script>
 </body>
+
 </html>

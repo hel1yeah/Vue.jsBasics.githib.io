@@ -5084,6 +5084,7 @@ tbody.collapse.show {
   .card-group>.card:only-child {
     border-radius: .25rem
   }
+}
 
   .card-group>.card:only-child .card-header,
   .card-group>.card:only-child .card-img-top {

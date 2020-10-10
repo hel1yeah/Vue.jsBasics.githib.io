@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,23 +8,66 @@
   <link rel="stylesheet" href="./bootstrap.min.css">
   <script src="./vue.js"></script>
 </head>
+
 <body>
   <div class="wrapper">
     <div class="sample">
-      <button class="btm btn-primary">
+      <button class="btm btn-primary" v-on:click="showH2 = !showH2" v-bind:title="btnText">
+        {{btnText}}
+      </button>
+      <h2 v-show="showH2">SUM all numbers: {{ sum }}</h2>
+      <hr>
+      <button class="btm btn-suc" v-on:click="addNumber">
+
         TOGGLE HEADER
       </button>
-      <h2>HEllo mather fuker</h2>
+      <ul class="list-g">
+        <li class="list-g-item" v-for="num in numbers">
+          {{num}}
+        </li>
+      </ul>
     </div>
   </div>
   <script>
-   let sample = new Vue ({
-     el: '.sample',
-     data: {
+    let sample = new Vue({
+      el: '.sample',
+      data: {
+        showH2: true,
+        numbers: []
 
-     }
-   });
+      },
+      methods: {
+        addNumber() {
+          let rnd = Math.floor(Math.random() * 11) - 5;
+          this.numbers.push(rnd)
+        }
+      },
+      computed: {
+        sum() {
+          console.log(1);
+          let sum = 0;
+
+          for (let i = 0; i < this.numbers.length; i++) {
+            sum += Number(this.numbers[i]);
+          }
+          return sum;
+        },
+        btnText(){
+          return this.showH2 ? 'Hide result': 'Show result';
+        }
+      }
+  });
 
   </script>
+
+  <style>
+    .list-g {
+      list-style-type: none;
+    }
+
+    .list-g-item {
+      list-style-type: none;
+  </style>
 </body>
+
 </html>

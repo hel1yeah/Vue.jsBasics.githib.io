@@ -16,7 +16,7 @@
         Togle Header
       </button>
       <button class="btn btn-fun" 
-      v-on:click="numbers.push(Math.floor(Math.random()* 10))" >
+      v-on:click="addNumber" >
 
         add list
       </button>
@@ -36,6 +36,11 @@
       data: {
         showH2: true,
         numbers: [1, 1, ]
+      },
+      methods: {
+        addNumber(){
+          this.numbers.push(Math.floor(Math.random() * 10))
+        }
       }
     });
 

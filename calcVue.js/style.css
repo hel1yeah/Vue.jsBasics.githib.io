@@ -31,6 +31,9 @@ input[type="text"] {
   height: 50px;
   font-size: 18px;
   border: none;
+  display: flex;
+  align-items:center;
+  justify-content: center;
 }
 
 .num {
@@ -46,4 +49,16 @@ input[type="text"] {
 .op {
   background-color: #ff9900;
   color: #243849;
+}
+.red{
+  background-color:firebrick;
+}
+.icon{
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 60%;
+  height: 60%;
+  fill:#243849;
 }

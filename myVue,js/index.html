@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>myVue.js</title>
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+
+  <div class="container">
+    <div id="app">
+      <div class="test-string" :title='testString'>
+        {{ message }}
+      </div>
+      <button v-on:click="random() " v-if='hz' class="btn button1">
+        BUTTON BLEAN
+      </button>
+      <h1> {{randomNumber}} </h1>
+      <ul class="list">
+        <todo-item></todo-item>
+      </ul>
+      <todo-item></todo-item>
+    </div>
+
+  </div>
+
+
+  <script src="./script.js"></script>
+</body>
+
+</html>
